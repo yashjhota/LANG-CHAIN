@@ -8,7 +8,7 @@ load_dotenv()
 
 # Define the model
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="deepseek-ai/DeepSeek-R1",
     task="text-generation"
 )
 

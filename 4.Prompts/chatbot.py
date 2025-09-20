@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 # Load the Hugging Face model and endpoint
 llm = HuggingFaceEndpoint(
-    repo_id="tiiuae/falcon-7b-instruct",
+    repo_id="deepseek-ai/DeepSeek-R1",
     task="text-generation"
 )
 

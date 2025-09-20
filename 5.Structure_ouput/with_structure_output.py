@@ -8,6 +8,7 @@ load_dotenv()
 class Review(BaseModel):
     summary: str = Field(..., description="summary of the review")
     sentiment: str = Field(..., description="sentiment of the review positive/negative")
+    rate: int = Field(..., description="rating of the review", ge=1, le=10)
    
 
 
@@ -15,10 +16,14 @@ model = ChatGroq(model="llama-3.1-8b-instant")
 
 structured_model = model.with_structured_output(Review)
 
-response = structured_model.invoke("""Tried the new AI tool – super smooth and efficient!
-It generates quality content in seconds and saves tons of time.
-UI is clean, responses are accurate.
-Perfect for students, creators, and busy pros! ⭐⭐⭐⭐⭐""")
+try:
+        response = structured_model.invoke("""Tried the new AI tool – super smooth and efficient!
+    It generates quality content in seconds and saves tons of time.
+    UI is clean, responses are accurate.
+    Perfect for students, creators, and busy pros! ⭐⭐⭐⭐⭐""")
+except Exception as e:
+        print(e)
+        response = None
 
 print(response)
 

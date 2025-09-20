@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="openai/gpt-oss-20b",
     task="text-generation"
 )
 
@@ -31,5 +31,7 @@ parallel_chain = RunnableParallel({
 
 result = parallel_chain.invoke("AI")
 
-print(result['tweet'])
-print(result['summary'])
+# print(result['tweet'])
+# print(result['summary'])
+
+parallel_chain.get_graph().print_ascii()

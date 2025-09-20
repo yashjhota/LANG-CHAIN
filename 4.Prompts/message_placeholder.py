@@ -8,7 +8,7 @@ chat_template = ChatPromptTemplate([
 
 chat_history = []
 # load chat history
-with open('chat_history.txt') as f:
+with open('4.Prompts\chat_history.txt','r') as f:
     chat_history.extend(f.readlines())
 
 print(chat_history)

@@ -15,7 +15,7 @@ load_dotenv()
 
 
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="moonshotai/Kimi-K2-Instruct-0905",
     task="text-generation"
 )
 

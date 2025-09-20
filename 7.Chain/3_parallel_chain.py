@@ -8,12 +8,12 @@ load_dotenv()
 
 # Use two different HuggingFace endpoints for demo (you can use the same one twice if needed)
 llm1 = HuggingFaceEndpoint(
-    repo_id="google/gemma-1.1-2b-it",
+    repo_id="openai/gpt-oss-20b",
     task="text-generation"
 )
 
 llm2 = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",
+    repo_id="meta-llama/Llama-3.2-3B-Instruct",
     task="text-generation"
 )
 

@@ -7,24 +7,24 @@ load_dotenv()
 
 # Initialize the Hugging Face endpoint
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="openai/gpt-oss-20b",
     task="text-generation"
 )
 
 model = ChatHuggingFace(llm=llm)
 
 prompt = PromptTemplate(
-    template="Generate 5 facts about {topic}",
+    template="Generate 10 facts about {topic}",
     input_variables=["topic"]
 )
 
 parser = StrOutputParser()
 
-# ✅ Correct chain flow: Prompt → Model → Parser
+# ✅ chain flow: Prompt → Model → Parser
 chain = prompt | model | parser
 
 # Run the chain
-response = chain.invoke({'topic': "Python programming"})
+response = chain.invoke({'topic': "Mahaveer Swami"})
 print(response)
-chain.get_graph().print_ascii()
+# chain.get_graph().print_ascii()
 

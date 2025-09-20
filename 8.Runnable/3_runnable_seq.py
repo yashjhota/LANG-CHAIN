@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="openai/gpt-oss-20b",
     task="text-generation"
 )
 
@@ -18,7 +18,7 @@ prompt1 = PromptTemplate(
 )
 
 prompt2 = PromptTemplate(
-    template="Explain about your joke on {txt}",
+    template="Explain about the joke on {txt}",
     input_variables=["txt"]
 
 )
@@ -29,3 +29,6 @@ chain = RunnableSequence(prompt1,model,output_parser,prompt2,model,output_parser
 
 result = chain.invoke({"topic": "cats"})
 print(result) 
+
+
+chain.get_graph().print_ascii()

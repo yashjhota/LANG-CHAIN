@@ -6,7 +6,7 @@ from langchain_core.output_parsers import JsonOutputParser
 load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",  # Chat-compatible
+    repo_id="deepseek-ai/DeepSeek-R1",  # Chat-compatible
     task="text-generation"
 )
 
@@ -24,13 +24,13 @@ template = PromptTemplate(
 
 prompt = template.format()
 
-# print(prompt)
+print(prompt)
 
 result = model.invoke(prompt)
 
 final = parser.parse(result.content)
 
-# print(result)
+print(result)
 
 print(final)
 

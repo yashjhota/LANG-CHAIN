@@ -11,7 +11,7 @@ load_dotenv()
 # )
 
 llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",  # Chat-compatible
+    repo_id="deepseek-ai/DeepSeek-R1",  # Chat-compatible
     task="text-generation"
 )
 model = ChatHuggingFace(llm=llm)

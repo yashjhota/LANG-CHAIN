@@ -10,7 +10,7 @@ load_dotenv()
 
 # Using  a FREE HuggingFace model
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-1.1-2b-it",
+    repo_id="meta-llama/Llama-3.2-3B-Instruct",
     task="text-generation"
 )
 model = ChatHuggingFace(llm=llm)

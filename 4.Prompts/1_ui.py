@@ -5,7 +5,7 @@ import streamlit as st
 load_dotenv()
 
 llm = HuggingFaceEndpoint(
-    repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    repo_id="deepseek-ai/DeepSeek-R1",
     task="text-generation"
 )
 

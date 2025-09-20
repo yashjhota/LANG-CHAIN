@@ -18,7 +18,7 @@ prompt2 = PromptTemplate(
 
 # Initialize the Hugging Face endpoint
 llm = HuggingFaceEndpoint(
-    repo_id="google/gemma-2-2b-it",
+    repo_id="openai/gpt-oss-20b",
     task="text-generation"
 )
 
@@ -28,11 +28,11 @@ parser = StrOutputParser()
 
 chain = prompt1 | model | parser | prompt2 | model | parser
 
-result = chain.invoke({'topic': 'Jain'})
+result = chain.invoke({'topic': 'Jainism'})
 
 print(result)
 
 
 # To visualize the chain 
 
-chain.get_graph().print_ascii()
+# chain.get_graph().print_ascii()
