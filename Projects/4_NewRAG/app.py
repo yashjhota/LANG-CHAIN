@@ -12,7 +12,7 @@ This uses **Groq** LLMs, **Chroma** vector store, and **LangChain** to answer qu
 )
 
 # Input box
-question = st.text_input("Ask a question:", placeholder="e.g. Who is yash jain?")
+question = st.text_input("Ask a question:", placeholder="e.g. Who is yash jainc?")
 
 if st.button("Get Answer") and question:
     with st.spinner("Thinking..."):

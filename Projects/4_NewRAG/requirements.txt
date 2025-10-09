@@ -7,3 +7,6 @@ python-dotenv
 wikipedia
 sentence_transformers
 pypdf
+fastapi
+uvicorn
+pydantic
