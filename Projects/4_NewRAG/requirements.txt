@@ -8,5 +8,5 @@ wikipedia
 sentence_transformers
 pypdf
 fastapi
-uvicorn
+uvicorn[standard]
 pydantic
